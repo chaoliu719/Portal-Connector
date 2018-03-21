@@ -1,7 +1,7 @@
 # Portal Connector for windows
 
-[python](https://img.shields.io/badge/Python-3.6%2B-blue.svg)
-[license](https://img.shields.io/badge/license-MIT-yellowgreen.svg)
+[![python](https://img.shields.io/badge/Python-3.6%2B-blue.svg)](https://github.com/lcgooder/Portal-Connector)
+[![license](https://img.shields.io/badge/license-MIT-yellowgreen.svg)](https://github.com/lcgooder/Portal-Connector)
 
 更方便地连接NUAA Portal，免去了等待浏览器打开的烦恼。
 
