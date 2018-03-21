@@ -10,6 +10,8 @@
 ## 展示
 ![Portal Connector Demo](https://github.com/lcgooder/Portal-Connector/blob/master/demo.png)
 
+## 下载
+[https://github.com/lcgooder/Portal-Connector/releases](https://github.com/lcgooder/Portal-Connector/releases)
 
 ## 特点
 
