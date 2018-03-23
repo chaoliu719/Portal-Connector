@@ -39,25 +39,31 @@ def connect_portal(username, password, domain='1'):
         login_info['password'] = password
         login_info['domain'] = domain
 
-        if s.get('http://202.119.65.214', timeout=0.5).status_code != 200:
-            return 'No Network'
-        else:
-            try:
+        try:
+            if s.get('http://202.119.65.214', timeout=0.5).status_code != 200:
+                    return 'No Network'
+            else:
+
                 login_resp = s.post(request_url, data=login_info, headers=headers, timeout=0.5)
                 return loads(login_resp.json()['data'])['status'].capitalize()
-            except ReadTimeout:
-                return 'Timeout'
-            except ConnectTimeout:
-                return 'Timeout'
-            except:
-                return 'Unknown Err'
-
+        except ReadTimeout:
+            return 'Connect Timeout'
+        except ConnectTimeout:
+            return 'Connect Timeout'
+        except:
+            return 'Unknown Err'
     return 'Need Information'
 
 
 def test_public():
-    if s.get('http://baidu.com', timeout=0.5).status_code == 200:
-        return "Accessible"
-
-    else:
-        return "Not Accessible"
+    try:
+        if s.get('http://baidu.com', timeout=0.5).status_code == 200:
+            return "Accessible"
+        else:
+            return "Not Accessible"
+    except ReadTimeout:
+        return 'Test Timeout'
+    except ConnectTimeout:
+        return 'Test Timeout'
+    except:
+        return 'Unknown Err'
